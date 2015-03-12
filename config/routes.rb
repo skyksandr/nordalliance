@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     root 'static_pages#index'
   end
 
+  get '/:locale' => 'static_pages#index'
   root to: redirect("/#{I18n.default_locale}", status: 302),
        as: :redirected_root
 
